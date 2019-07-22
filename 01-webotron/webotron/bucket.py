@@ -19,11 +19,11 @@ class BucketManager:
         return self.s3.buckets.all()
 
     def all_objects(self, bucket):
-        """Get an iterator for all objects in bucket."""
+        """Get an iterator for all objects in a bucket."""
         return self.s3.Bucket(bucket).objects.all()
 
     def init_bucket(self, bucket_name):
-        """Create a new bucket, or return exixsting one by name."""
+        """Create a new bucket, or return an existing one by name."""
         s3_bucket = None
         try:
             s3_bucket = self.s3.create_bucket(
